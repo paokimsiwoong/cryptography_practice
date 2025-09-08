@@ -1,4 +1,4 @@
-package ch1
+package main
 
 import (
 	"crypto/aes"
@@ -8,12 +8,15 @@ import (
 	"log"
 )
 
+//	func debugEncryptDecrypt(masterKey, masterKeyDec, iv, password string) (string, string) {
+//		encryptedPassword := encrypt(password, masterKey, iv)
+//		decryptedPassword := decrypt(encryptedPassword, masterKeyDec, iv)
+//		return encryptedPassword, decryptedPassword
+//	}
 func debugEncryptDecrypt(masterKey, iv, password string) (string, string) {
-	// ?
-	encrypted := encrypt(password, masterKey, iv)
-	decrypted := decrypt(encrypted, masterKey, iv)
-
-	return encrypted, decrypted
+	encryptedPassword := encrypt(password, masterKey, iv)
+	decryptedPassword := decrypt(encryptedPassword, masterKey, iv)
+	return encryptedPassword, decryptedPassword
 }
 
 // don't touch below this line

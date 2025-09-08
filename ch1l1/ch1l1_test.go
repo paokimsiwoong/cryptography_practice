@@ -1,4 +1,4 @@
-package main
+package ch1l1
 
 import (
 	"fmt"

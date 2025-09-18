@@ -4,6 +4,10 @@ func crypt(textCh, keyCh <-chan byte, result chan<- byte) {
 	// <-chan 는 read only channel, chan<-는 write only channel
 	// ?
 
+	// @@@ defer 사용해서 채널 close 하기
+	defer close(result)
+	// defer를 사용하면 for 루프 안에 break 대신 return을 사용해도 문제 없다
+
 	for {
 		t, tok := <-textCh
 		// 채널이 닫히고 채널 안에 데이터가 없으면 tok 가 false
@@ -27,5 +31,5 @@ func crypt(textCh, keyCh <-chan byte, result chan<- byte) {
 		result <- (t ^ k)
 	}
 
-	close(result)
+	// close(result)
 }

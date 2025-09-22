@@ -10,11 +10,11 @@ func feistel(msg []byte, roundKeys [][]byte) []byte {
 	var oldRhs []byte
 
 	for _, roundKey := range roundKeys {
-		// 이전 오른쪽 블록을 임시 저장
+		// 이전 오른쪽 절반을 임시 저장
 		oldRhs = rhs
-		// 새로운 오른쪽 블록은 xor(lhs, hash(rhs, roundKey))로 계산
+		// 새로운 오른쪽 절반은 xor(lhs, hash(rhs, roundKey))로 계산
 		rhs = xor(lhs, hash(rhs, roundKey, len(lhs)))
-		// 왼쪽 블록은 이전의 오른쪽 블록으로 교체(스왑)
+		// 왼쪽 절반은 이전의 오른쪽 절반으로 교체(스왑)
 		lhs = oldRhs
 	}
 

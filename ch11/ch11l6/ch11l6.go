@@ -14,6 +14,7 @@ func getTot(p, q *big.Int) *big.Int {
 	one := big.NewInt(1)
 
 	return tot.Mul(tot.Sub(p, one), tot.Sub(q, one))
+	// tot.Mul(new(big.Int).Sub(p, big.NewInt(1)), new(big.Int).Sub(q, big.NewInt(1)))
 }
 
 // (1, ϕ(n)) 사이에 ϕ(n)과 서로소인 숫자(e) 하나를 랜덤 생성 후 반환하는 함수

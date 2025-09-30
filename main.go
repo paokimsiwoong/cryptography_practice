@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/paokimsiwoong/cryptography_practice/ch3/ch3l5"
+	"github.com/paokimsiwoong/cryptography_practice/ch3_brute_force/ch3l5"
 )
 
 func main() {
